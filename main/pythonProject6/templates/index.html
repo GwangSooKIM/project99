@@ -19,6 +19,8 @@
 
         <!-- 구글폰트 -->
         <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Shippori+Mincho&display=swap" rel="stylesheet">
 
 
         <title>Thanks for finding</title>
@@ -29,9 +31,36 @@
                 font-family: "Stylish", sans-serif;
             }
 
-            .wrap {
-                width: 900px;
+            .section {
+                padding: 1rem 1.5rem;
+                max-width: 1000px;
                 margin: auto;
+            }
+
+            .title {
+                font-weight: 800;
+                font-size: 5rem;
+                font-family: 'Akaya Telivigala', cursive;
+                font-family: 'Shippori Mincho', serif;
+                margin-bottom: 3px;
+                color: indigo;
+            }
+
+            .subtitle {
+                padding-left: 139px;
+                padding-bottom: 0px;
+                margin-top: 1px;
+                margin-bottom: 0px;
+                font-size: 2rem;
+                font-family: 'Akaya Telivigala', cursive;
+                font-family: 'Shippori Mincho', serif;
+                color: indigo;
+            }
+
+    
+            .wrap {
+         
+                background-color: mediumpurple;
             }
 
             .comment {
@@ -41,26 +70,31 @@
 
             #post-box {
                 width: 500px;
-                margin: 20px auto;
+                margin: auto auto 30px auto;
                 padding: 50px;
                 border: black solid;
                 border-radius: 5px;
+                background-color: mediumslateblue;
             }
+            .btn {
+                color: indigo;
+            } 
         </style>
         <script>
             $(document).ready(function () {
                 showArticles();
+                $("#post-box").show();
             });
 
-            function openClose() {
-                if ($("#post-box").css("display") == "block") {
-                    $("#post-box").hide();
-                    $("#btn-post-box").text("포스팅 박스 열기");
-                } else {
-                    $("#post-box").show();
-                    $("#btn-post-box").text("포스팅 박스 닫기");
-                }
-            }
+            // function openClose() {
+            //     if ($("#post-box").css("display") == "block") {
+            //         $("#post-box").hide();
+            //         $("#btn-post-box").text("포스팅 박스 열기");
+            //     } else {
+            //         $("#post-box").show();
+            //         $("#btn-post-box").text("포스팅 박스 닫기");
+            //     }
+            // }
 
             function postArticle() {
                 let url = $('#post-url').val()
@@ -114,8 +148,14 @@
     </head>
 
     <body>
+        <section class="hero is-white">
+            <div class="hero-body has-text-centered" style="padding-top: 44.5px; padding-left: 292px; padding-bottom:1rem;margin:auto;">
+                <h1 class="title is-sparta">thanks for finding</h1>
+                <h3 class="subtitle is-sparta">오늘 하루의 감정을 담아서♫</h3>
+            </div>
+        </section>
         <div class="wrap">
-            <div class="jumbotron">
+            <!-- <div class="jumbotron hero is-white">
                 <h1 class="display-4">Thanks for finding</h1>
                 <p class="lead">소중한 음악을 추천해주세요</p>
                 <hr class="my-4">
@@ -123,9 +163,9 @@
                     <button onclick="openClose()" id="btn-post-box" type="button" class="btn btn-primary">포스팅 박스 열기
                     </button>
                 </p>
-            </div>
+            </div> -->
             <div id="post-box" class="form-post" style="display:none">
-
+                    
                     <div class="form-group">
                         <label for="post-url">URL</label>
                         <input id="post-url" class="form-control" placeholder="">
@@ -141,7 +181,7 @@
                         <textarea id="post-comment" class="form-control" rows="2"></textarea>
                     </div>
 
-                    <button type="button" class="btn btn-primary" onclick="postArticle()">기사저장</button>
+                    <button type="button" class="btn" onclick="postArticle()">음악 저장</button>
                 </div>
             </div>
             <div id="cards-box" class="card-columns">
@@ -151,6 +191,3 @@
     </body>
 
 </html>
-
-#content > div.summary_section > div.summary_thumb
-#content > div.summary_section > div.summary_thumb
