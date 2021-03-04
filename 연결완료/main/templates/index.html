@@ -19,6 +19,8 @@
 
         <!-- 구글폰트 -->
         <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Shippori+Mincho&display=swap" rel="stylesheet">
 
 
         <title>Thanks for finding</title>
@@ -29,10 +31,42 @@
                 font-family: "Stylish", sans-serif;
             }
 
+<<<<<<< HEAD:main/templates/index.html
 
             .wrap {
                 width: 900px;
+=======
+            .section {
+                padding: 1rem 1.5rem;
+                max-width: 1000px;
+>>>>>>> 1e488cd5b7f7d49c71dbf9ef320192bd69d94b58:연결완료/main/templates/index.html
                 margin: auto;
+            }
+
+            .title {
+                font-weight: 800;
+                font-size: 5rem;
+                font-family: 'Akaya Telivigala', cursive;
+                font-family: 'Shippori Mincho', serif;
+                margin-bottom: 3px;
+                color: indigo;
+            }
+
+            .subtitle {
+                padding-left: 139px;
+                padding-bottom: 0px;
+                margin-top: 1px;
+                margin-bottom: 0px;
+                font-size: 2rem;
+                font-family: 'Akaya Telivigala', cursive;
+                font-family: 'Shippori Mincho', serif;
+                color: indigo;
+            }
+
+    
+            .wrap {
+         
+                background-color: mediumpurple;
             }
 
             .comment {
@@ -41,37 +75,60 @@
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
+<<<<<<< HEAD:main/templates/index.html
 
+=======
+>>>>>>> 1e488cd5b7f7d49c71dbf9ef320192bd69d94b58:연결완료/main/templates/index.html
             }
 
             #post-box {
                 width: 500px;
-                margin: 20px auto;
+                margin: auto auto 30px auto;
                 padding: 50px;
                 border: black solid;
                 border-radius: 5px;
+                background-color: mediumslateblue;
             }
+<<<<<<< HEAD:main/templates/index.html
 
             #cards-box{
                 width: 50%;
                 margin:auto;
+=======
+            .btn {
+                color: indigo;
+            } 
+
+            #cards-box{
+                width: 70%;
+                -webkit-column-count: 4;
+                column-count: 4;
+                display: block;
+                margin: auto;
+                /* display: flex;
+                flex-direction: row-reverse;
+                justify-content: space-evenly; */
+            }
+
+            /* .card {
+                overflow: hidden;
+                margin: auto;
+                width: 200px;
+                height: 300px; 
+            } */
+
+            .melon {
+                color:black;
+>>>>>>> 1e488cd5b7f7d49c71dbf9ef320192bd69d94b58:연결완료/main/templates/index.html
             }
             
         </style>
         <script>
             $(document).ready(function () {
                 showArticles();
+                $("#post-box").show();
             });
 
-            function openClose() {
-                if ($("#post-box").css("display") == "block") {
-                    $("#post-box").hide();
-                    $("#btn-post-box").text("포스팅 박스 열기");
-                } else {
-                    $("#post-box").show();
-                    $("#btn-post-box").text("포스팅 박스 닫기");
-                }
-            }
 
             function postArticle() {
                 let url = $('#post-url').val()
@@ -92,7 +149,7 @@
             function showArticles() {
                 $.ajax({
                     type: "GET",
-                    url: "/reviews?sample_give=샘플데이터",
+                    url: "/reviews",
                     data: {},
                     success: function (response) {
                         let songs = response['all_song']
@@ -125,26 +182,23 @@
     </head>
 
     <body>
-        <div class="wrap">
-            <div class="jumbotron">
-                <h1 class="display-4">Thanks for finding</h1>
-                <p class="lead">소중한 음악을 추천해주세요</p>
-                <hr class="my-4">
-                <p class="lead">
-                    <button onclick="openClose()" id="btn-post-box" type="button" class="btn btn-primary">포스팅 박스 열기
-                    </button>
-                </p>
+        <section class="hero is-white">
+            <div class="hero-body has-text-centered" style="padding-top: 44.5px; padding-left: 292px; padding-bottom:1rem;margin:auto;">
+                <h1 class="title is-sparta">thanks for finding</h1>
+                <h3 class="subtitle is-sparta">오늘의 기분을 음악에 담아서♫</h3>
             </div>
+        </section>
+        <div class="wrap">
             <div id="post-box" class="form-post" style="display:none">
-
+                    
                     <div class="form-group">
-                        <label for="post-url">URL</label>
+                        <label for="post-url">URL<a class="melon" href="https://www.melon.com/chart/index.htm" target="blank">(melon)</a></label>
                         <input id="post-url" class="form-control" placeholder="">
                     </div>
 
                     <div class="form-group">
                         <label for="post-singer">가수</label>
-                        <textarea id="post-singer" class="form-control" rows="2"></textarea>
+                        <textarea id="post-singer" class="form-control" rows="1"></textarea>
                     </div>
 
                     <div class="form-group">
@@ -152,14 +206,23 @@
                         <textarea id="post-comment" class="form-control" rows="2" maxlength='25'></textarea>
                     </div>
 
-                    <button type="button" class="btn btn-primary" onclick="postArticle()">기사저장</button>
+                    <button type="button" class="btn" onclick="postArticle()">음악 추천!</button>
                 </div>
+                
             </div>
+<<<<<<< HEAD:main/templates/index.html
 
             <div id="cards-box" class="card-columns">
                 </div>
+=======
+                <div id="cards-box" class="card-columns"></div>
+>>>>>>> 1e488cd5b7f7d49c71dbf9ef320192bd69d94b58:연결완료/main/templates/index.html
             </div>
         </div>
     </body>
 
+<<<<<<< HEAD:main/templates/index.html
 </html>
+=======
+</html>
+>>>>>>> 1e488cd5b7f7d49c71dbf9ef320192bd69d94b58:연결완료/main/templates/index.html
