@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-<<<<<<< HEAD:venv-test/.idea/modules.xml
-      <module fileurl="file://$PROJECT_DIR$/.idea/venv-test.iml" filepath="$PROJECT_DIR$/.idea/venv-test.iml" />
-=======
       <module fileurl="file://$PROJECT_DIR$/../main/.idea/main.iml" filepath="$PROJECT_DIR$/../main/.idea/main.iml" />
->>>>>>> 1e488cd5b7f7d49c71dbf9ef320192bd69d94b58:연결완료/main/.idea/modules.xml
     </modules>
   </component>
 </project>

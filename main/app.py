@@ -15,8 +15,8 @@ app.config['UPLOAD_FOLDER'] = "./static/profile_pics"
 
 SECRET_KEY = 'SPARTA'
 
-client = MongoClient('mongodb://test:test@localhost', 27017)
-# client = MongoClient('localhost', 27017)
+# client = MongoClient('mongodb://test:test@localhost', 27017)
+client = MongoClient('localhost', 27017)
 db = client.dbsparta_plus_week4
 
 
@@ -54,7 +54,7 @@ def sign_in():
             'id': username_receive,
             'exp': datetime.utcnow() + timedelta(seconds=60 * 60 * 24)  # 로그인 24시간 유지
         }
-        token = jwt.encode(payload, SECRET_KEY, algorithm='HS256').decode('utf-8')
+        token = jwt.encode(payload, SECRET_KEY, algorithm='HS256')
 
         return jsonify({'result': 'success', 'token': token})
     # 찾지 못하면
@@ -88,46 +88,6 @@ def check_dup():
 
 @app.route('/reviews', methods=['GET'])
 def listing():
-<<<<<<< HEAD:main/app.py
-
-    songs = list(db.music.find({}, {'_id': False}))
-
-    return jsonify({'all_song':songs})
-
-## API 역할을 하는 부분
-@app.route('/reviews', methods=['POST'])
-def saving():
-
-    url_receive = request.form['url_give']
-    comment_receive = request.form['comment_give']
-    singer_receive = request.form['singer_give']
-
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
-    data = requests.get(url_receive, headers=headers)
-
-    soup = BeautifulSoup(data.text, 'html.parser')
-
-    song = soup.select_one('meta[property="og:title"]')['content']
-    image = soup.select_one('meta[property="og:image"]')['content']
-
-
-    doc = {
-        'singer':singer_receive,
-        'song':song,
-        'url':url_receive,
-        'comment':comment_receive,
-        'image':image
-
-    }
-
-    db.music.insert_one(doc)
-
-    return jsonify({'msg':'저장완료!'})
-
-
-=======
->>>>>>> 1e488cd5b7f7d49c71dbf9ef320192bd69d94b58:연결완료/main/app.py
 
     songs = list(db.music.find({}, {'_id': False}))
 
